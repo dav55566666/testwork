@@ -29,3 +29,24 @@ $(".school_nav_item").click(function () {
         scrollTop: $(name).position().top - 80
     }, 500);
 })
+
+var play_vid = 0
+
+$(".video_block_box").click(function (event) {
+    if (play_vid == 0) {
+        play_vid = 1
+        $(this).children(".vid_show").show()
+        $(this).children(".video_block_box img").hide()
+        $(this).children(".video_block_box button").hide()
+        $(this).children(".vid_show").get(0).play();
+        $(this).children(".vid_show").css("z-index", "5")
+    }
+    else {
+        $(this).children(".vid_show").hide();
+        $(this).children(".video_block_box img").show()
+        $(this).children(".video_block_box button").show()
+        $(this).children(".vid_show").get(0).pause();
+        $(this).children(".vid_show").css("z-index", "-2")
+        play_vid = 0
+    }
+})

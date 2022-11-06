@@ -890,9 +890,35 @@ body.ie ._ibg img {
   flex: 1 1 auto;
 }
 
+.video_block_box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.video_block_box .vid_img_hide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video_block_box .play_vid {
+  position: absolute;
+  left: 50%;
+  top: 39%;
+  transform: translate(-50%);
+}
+.video_block_box .vid_show {
+  width: 100%;
+  height: 100%;
+  display: none;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .school {
   width: 100%;
-  padding: 74px 20px 0px;
+  padding: 74px 20px 40px;
 }
 .school .school_cont {
   width: 100%;
@@ -909,8 +935,10 @@ body.ie ._ibg img {
 .school .school_cont .school_flex .school_nav {
   width: 100%;
   max-width: 256px;
+  min-width: 256px;
   position: sticky;
   top: 20px;
+  margin-right: 20px;
 }
 .school .school_cont .school_flex .school_nav::before {
   content: "";
@@ -1048,11 +1076,13 @@ body.ie ._ibg img {
   width: 100%;
   margin-bottom: 30px;
 }
-.school .school_cont .school_flex .school_right .school_revievs img {
+.school .school_cont .school_flex .school_right .school_revievs .video_block_box {
   width: 100%;
   display: block;
   margin: 0 auto 100px;
   max-width: 558px;
+  height: 313px;
+  cursor: pointer;
 }
 .school .school_cont .school_flex .school_right .school_revievs p {
   margin-bottom: 20px;
@@ -1112,6 +1142,9 @@ body.ie ._ibg img {
   width: 100%;
   max-width: 430px;
 }
+.school .school_cont .school_flex .school_right .scholl_certificates .certificates_item:nth-child(1) {
+  margin-right: 15px;
+}
 .school .school_cont .school_flex .school_right .scholl_certificates .certificates_item img {
   width: 100%;
   height: 290px;
@@ -1137,6 +1170,16 @@ body.ie ._ibg img {
 .school .school_cont .school_flex .school_right .scholl_how-work p:last-child {
   margin-bottom: 0;
 }
+.school .school_cont .school_development_scroll {
+  width: 100%;
+  overflow: auto;
+}
+.school .school_cont .school_development_scroll::-webkit-scrollbar {
+  width: 0px;
+}
+.school .school_cont .school_development_scroll .school_development_box {
+  min-width: 1150px;
+}
 .school .school_cont .school_development {
   width: 100%;
   display: flex;
@@ -1144,14 +1187,14 @@ body.ie ._ibg img {
   align-items: flex-end;
   max-width: 1040px;
 }
-.school .school_cont .school_development:nth-child(3) {
+.school .school_cont .school_development:nth-child(2) {
   position: relative;
   align-items: flex-start;
   max-width: 1150px;
   padding-left: 52px;
-  top: -108px;
+  margin-top: -108px;
 }
-.school .school_cont .school_development:nth-child(3)::before {
+.school .school_cont .school_development:nth-child(2)::before {
   content: "";
   width: 100%;
   max-width: 1100px;
@@ -1162,7 +1205,7 @@ body.ie ._ibg img {
   background-color: #9B2C3D;
   height: 2px;
 }
-.school .school_cont .school_development:nth-child(3) .development_item:nth-child(1) {
+.school .school_cont .school_development:nth-child(2) .development_item:nth-child(1) {
   max-width: 141px;
   min-width: 141px;
 }
@@ -1209,4 +1252,317 @@ body.ie ._ibg img {
   line-height: 20px;
   text-align: center;
   color: #4D413B;
+}
+.school .school_cont .school_development .development_item p a {
+  text-decoration: underline;
+  color: #4D413B;
+}
+
+@media (max-width: 1170px) {
+  .school {
+    padding: 74px 20px 40px;
+  }
+  .school .school_cont .school_flex {
+    margin-bottom: 60px;
+  }
+  .school .school_cont .school_flex .school_nav {
+    max-width: 256px;
+    top: 20px;
+  }
+  .school .school_cont .school_flex .school_nav::before {
+    content: "";
+  }
+  .school .school_cont .school_flex .school_nav .school_nav_item p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .school .school_cont .school_flex .school_nav .school_nav_item.active {
+    padding: 15px 10px;
+  }
+  .school .school_cont .school_flex .school_right {
+    max-width: 904px;
+  }
+  .school .school_cont .school_flex .school_right p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut {
+    margin-bottom: 60px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut h1 {
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 36px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut p {
+    margin-bottom: 20px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut .school_abaut_advantages {
+    margin-top: 45px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut .school_abaut_advantages .advantages_item .img {
+    min-width: 40px;
+    max-width: 40px;
+    margin-right: 15px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut .school_abaut_advantages .advantages_item .text h4 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .school .school_cont .school_flex .school_right .school_revievs {
+    margin-bottom: 30px;
+  }
+  .school .school_cont .school_flex .school_right .school_revievs .video_block_box {
+    margin: 0 auto 60px;
+    max-width: 558px;
+  }
+  .school .school_cont .school_flex .school_right .school_revievs p {
+    margin-bottom: 20px;
+  }
+  .school .school_cont .school_flex .school_right .school_methods {
+    margin-bottom: 70px;
+  }
+  .school .school_cont .school_flex .school_right .school_methods h4 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  .school .school_cont .school_flex .school_right .school_methods .school_methods_item {
+    margin-bottom: 10px;
+  }
+  .school .school_cont .school_flex .school_right .school_methods .school_methods_item span {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    margin-right: 25px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_certificates {
+    margin-bottom: 70px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_certificates .certificates_item {
+    max-width: 430px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_certificates .certificates_item img {
+    height: 200px;
+    margin-bottom: 10px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_how-work h4 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_how-work p {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 900px) {
+  .school {
+    padding: 40px 20px;
+  }
+  .school .school_cont .school_flex {
+    margin-bottom: 60px;
+    flex-direction: column;
+  }
+  .school .school_cont .school_flex .school_nav {
+    max-width: 256px;
+    top: 20px;
+    z-index: 555;
+    margin-left: -20px;
+  }
+  .school .school_cont .school_flex .school_nav::before {
+    display: none;
+  }
+  .school .school_cont .school_flex .school_nav .school_nav_item {
+    display: none;
+  }
+  .school .school_cont .school_flex .school_nav .school_nav_item.active {
+    padding: 15px 10px;
+    display: flex;
+  }
+  .school .school_cont .school_flex .school_right {
+    max-width: unset;
+    margin-top: 30px;
+  }
+  .school .school_cont .school_flex .school_right p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut {
+    margin-bottom: 60px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut h1 {
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 36px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut p {
+    margin-bottom: 20px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut .school_abaut_advantages {
+    margin-top: 45px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut .school_abaut_advantages .advantages_item .img {
+    min-width: 40px;
+    max-width: 40px;
+    margin-right: 15px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut .school_abaut_advantages .advantages_item .text h4 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .school .school_cont .school_flex .school_right .school_revievs {
+    margin-bottom: 30px;
+  }
+  .school .school_cont .school_flex .school_right .school_revievs .video_block_box {
+    margin: 0 auto 60px;
+    max-width: 558px;
+  }
+  .school .school_cont .school_flex .school_right .school_revievs p {
+    margin-bottom: 20px;
+  }
+  .school .school_cont .school_flex .school_right .school_methods {
+    margin-bottom: 70px;
+  }
+  .school .school_cont .school_flex .school_right .school_methods h4 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  .school .school_cont .school_flex .school_right .school_methods .school_methods_item {
+    margin-bottom: 10px;
+  }
+  .school .school_cont .school_flex .school_right .school_methods .school_methods_item span {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    margin-right: 25px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_certificates {
+    margin-bottom: 70px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_certificates .certificates_item {
+    max-width: 430px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_certificates .certificates_item img {
+    height: 200px;
+    margin-bottom: 10px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_how-work h4 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_how-work p {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 520px) {
+  .school {
+    padding: 40px 20px;
+  }
+  .school .school_cont .school_flex {
+    margin-bottom: 30px;
+    flex-direction: column;
+  }
+  .school .school_cont .school_flex .school_nav {
+    max-width: 256px;
+    top: 20px;
+    z-index: 555;
+    margin-left: -20px;
+  }
+  .school .school_cont .school_flex .school_nav::before {
+    display: none;
+  }
+  .school .school_cont .school_flex .school_nav .school_nav_item {
+    display: none;
+  }
+  .school .school_cont .school_flex .school_nav .school_nav_item.active {
+    padding: 15px 10px;
+    display: flex;
+  }
+  .school .school_cont .school_flex .school_right {
+    max-width: unset;
+    margin-top: 30px;
+  }
+  .school .school_cont .school_flex .school_right p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut {
+    margin-bottom: 60px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut h1 {
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 36px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut p {
+    margin-bottom: 20px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut .school_abaut_advantages {
+    margin-top: 45px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut .school_abaut_advantages .advantages_item {
+    flex-direction: column;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut .school_abaut_advantages .advantages_item .img {
+    min-width: 40px;
+    max-width: 40px;
+    margin-right: 0px;
+    margin-bottom: 16px;
+  }
+  .school .school_cont .school_flex .school_right .school_abaut .school_abaut_advantages .advantages_item .text h4 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .school .school_cont .school_flex .school_right .school_revievs {
+    margin-bottom: 30px;
+  }
+  .school .school_cont .school_flex .school_right .school_revievs .video_block_box {
+    margin: 0 auto 30px;
+    max-width: 558px;
+  }
+  .school .school_cont .school_flex .school_right .school_revievs p {
+    margin-bottom: 20px;
+  }
+  .school .school_cont .school_flex .school_right .school_methods {
+    margin-bottom: 30px;
+  }
+  .school .school_cont .school_flex .school_right .school_methods h4 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  .school .school_cont .school_flex .school_right .school_methods .school_methods_item {
+    margin-bottom: 10px;
+  }
+  .school .school_cont .school_flex .school_right .school_methods .school_methods_item span {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    margin-right: 10px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_certificates {
+    margin-bottom: 30px;
+    flex-direction: column;
+  }
+  .school .school_cont .school_flex .school_right .scholl_certificates .certificates_item {
+    max-width: 430px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_certificates .certificates_item:nth-child(1) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_certificates .certificates_item img {
+    height: 200px;
+    margin-bottom: 10px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_how-work h4 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  .school .school_cont .school_flex .school_right .scholl_how-work p {
+    margin-bottom: 20px;
+  }
 }
