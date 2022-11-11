@@ -157,7 +157,10 @@ h6 {
 
 .header {
   background: #fff;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 5;
 }
 @media (max-width: 47.99875em) {
@@ -2401,6 +2404,7 @@ h6 {
   width: 100%;
   position: relative;
   padding: 140px 20px 115px;
+  margin-top: 137px;
 }
 .pages_main::before {
   content: "";
@@ -2527,6 +2531,7 @@ h6 {
 
 @media (max-width: 991px) {
   .pages_main {
+    margin-top: 209px;
     padding: 100px 20px 70px;
   }
   .pages_main .pages_main_cont {
@@ -2585,6 +2590,19 @@ h6 {
     margin-top: 25px;
   }
 }
+
+@media(max-width: 768px) {
+  .pages_main {
+    margin-top: 67px;
+  }
+}
+
+@media(max-width: 668px) {
+  .pages_main {
+    margin-top: 57px;
+  }
+}
+
 @media (max-width: 600px) {
   .pages_main {
     padding: 60px 20px;
