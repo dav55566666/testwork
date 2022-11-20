@@ -1,0 +1,556 @@
+@font-face{
+	font-family: 'Mont';
+	src: url('https://b.wmnew.ru/fonts/Mont-bold.ttf') format('truetype');
+	font-weight: 800;
+	font-display: swap;
+}
+
+
+* {
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	background: #000000 url(../img/bg.jpg) no-repeat;
+	background-size: auto 1080px;
+	background-position: top center;
+	height: 1080px;
+}
+
+ul {
+	list-style-type: none;
+	/* transition: all 0.5s; */
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+.logo {
+	display: none;
+	position: absolute;
+}
+
+.content {
+	display: flex;
+	height: 100%;
+	padding-left: 240px;
+	padding-bottom: 60px;
+	justify-content: center;
+	align-items: flex-end;
+	position: relative;
+}
+.prise_popap{
+	position: absolute;
+	left: 0;
+	display: none;
+}
+.clickspin{
+	position: absolute;
+	right: 0;
+	width: 15%;
+	height: 100%;
+	background: unset;
+	border: unset;
+	z-index: 5;
+	cursor: pointer;
+}
+.drum {
+	width: 994px;
+	height: 415px;
+	background-image: url(../img/drum.png);
+	background-size: cover;
+	position: relative;
+	background-repeat: no-repeat;
+}
+
+.switch {
+	width: 154px;
+	height: 347px;
+	background: url(../img/switch.png) no-repeat;
+	background-size: cover;
+	cursor: pointer;
+	margin-bottom: 75px;
+}
+
+.drum__spins {
+	position: absolute;
+	width: 130px;
+	height: 327px;
+	background: url(../img/bg-spins.png) no-repeat;
+	background-size: cover;
+	top: 87px;
+    left: 37px;
+}
+
+.drum__spins-num {
+	width: 60px;
+	height: 60px;
+	display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
+    margin: 118px 33px 0;
+}
+
+.drum__spins-num img {
+	transform: translateY(86%)
+}
+
+.drum__window {
+	width: 528px;
+    height: 324px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 62px;
+    left: 176px;
+    z-index: 99;
+    position: relative;
+}
+
+.drum__window ul {
+	position: relative;
+	width: 148px;
+}
+
+.drum__window ul li {
+	margin: 60px 0;
+	width: 148px;
+}
+
+.drum__window ul li img {
+	max-width: 100%;
+}
+
+.one {
+	top: 53%;
+}
+
+.two {
+	top: -26%;
+}
+
+.three {
+	top: -107%;
+}
+
+.popup {
+	position: absolute;
+    width: 574px;
+    height: 477px;
+    top: -235px;
+    left: 158px;
+    z-index: -1;
+    display: none;
+}
+
+.popup img {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px 10px 0 0;
+}
+
+.popup.active {
+	display: block;
+}
+
+.big-win {
+	display: none;
+	position: absolute;
+    left: -215px;
+    top: -265px;
+    width: 1341px;
+    height: auto;
+    max-height: 258px;
+}
+
+.big-win img {
+	width: 100%;
+	height: 100%;
+}
+
+.big-win.active {
+	display: block;
+}
+
+.text {
+	font-family: 'Mont';
+	position: absolute;
+    font-size: 50px;
+    line-height: 53px;
+    font-weight: 800;
+    color: #fff;
+    width: 257px;
+    left: 1135px;
+    right: 0;
+    margin: auto;
+    bottom: 50px;
+    display: none;
+}
+
+.text.active {
+	display: block;
+}
+
+.btn-twist {
+	display: none;
+	background: url(../img/btn-twist.png) no-repeat;
+	width: 375px;
+	height: 215px;
+	margin: 0 auto;
+	cursor: pointer;
+	position: relative;
+}
+
+.btn-twist img {
+	width: 261px;
+	height: 23px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 67px;
+	margin: auto;
+}
+
+.total-win__btn {
+	width: 338px;
+    height: 89px;
+    background: url(../img/btn.png) no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 170px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.total-win__btn img {
+	width: 265px;
+    height: 25px;
+}
+
+@media (max-width: 1450px) {
+	.text {
+		left: 1080px;
+		font-size: 45px;
+		width: 212px;
+	}
+	.big-win {
+		left: -168px;
+	    width: 1205px;
+	}
+}
+
+@media (max-width: 1370px) {
+	.drum {
+	    width: 700px;
+	    height: 297px;
+	}
+	.drum__spins {
+	    width: 89px;
+	    height: 228px;
+	    top: 51px;
+	    left: 26px;
+	}
+	.drum__spins-num {
+	    width: 47px;
+	    margin: 67px 20px 0;
+	}
+	.switch {
+	    width: 100px;
+	    height: 225px;
+	    margin-bottom: 73px;
+	}
+	.content {
+		padding-left: 150px;
+	}
+	body {
+		height: 900px;
+		background: #000000 url(../img/bg-2.jpg) no-repeat;
+		background-size: auto 100%;
+		background-position: top center;
+	}
+	.drum__window ul {
+		width: 103px;
+	}
+	.drum__window ul li {
+		width: 103px;
+	}
+	.drum__window {
+	    width: 376px;
+	    height: 232px;
+	    top: 44px;
+	    left: 127px;
+	}
+	.one {
+	    top: 57%;
+	}
+	.two {
+	    top: -28%;
+	}
+	.three {
+	    top: -117%;
+	}
+	.popup {
+	    width: 444px;
+	    height: 373px;
+	    left: 98px;
+	}
+	.text {
+	    left: 790px;
+	    bottom: 50px;
+	    font-size: 33px;
+	    line-height: 40px;
+	    width: 160px;
+	}
+	.total-win__btn {
+		top: 150px;
+	}
+	.big-win {
+	    left: -125px;
+	    width: 903px;
+	    top: -200px;
+	}
+}
+
+@media (max-width: 950px) {
+	.drum {
+	    width: 489px;
+	    height: 207px;
+	}
+	.drum__spins {
+	    width: 64px;
+	    height: 165px;
+	    top: 36px;
+	    left: 20px;
+	}
+	.drum__spins-num {
+	    width: 32px;
+	    margin: 29px 16px 0;
+	}
+	.drum__window {
+	    width: 269px;
+	    height: 162px;
+	    top: 30px;
+	    left: 86px;
+	}
+	.drum__window ul {
+		width: 76px;
+	}
+	.drum__window ul li {
+		width: 76px;
+	}
+	.one {
+	    top: 67%;
+	}
+	.two {
+	    top: -35%;
+	}
+	.three {
+	    top: -138%;
+	}
+	.switch {
+	    width: 68px;
+	    height: 154px;
+	    margin-bottom: 60px;
+	}
+	.content {
+	    padding-left: 95px;
+	}
+	.popup {
+	    width: 326px;
+	    height: 275px;
+	    left: 59px;
+	    top: -155px;
+	}
+	.text {
+	    left: 568px;
+	    bottom: 50px;
+	    font-size: 27px;
+	    line-height: 32px;
+	    width: 129px;
+	}
+	.total-win__btn {
+	    top: 95px;
+	    width: 250px;
+    	height: 66px;
+	}
+	.total-win__btn img {
+	    width: 202px;
+	    height: 19px;
+	}
+	.big-win {
+	    left: -77px;
+	    width: 620px;
+	    top: -174px;
+	}
+}
+
+@media (max-width: 730px) {
+	.text {
+	    left: 534px;
+	    bottom: 50px;
+	    font-size: 22px;
+	    line-height: 27px;
+	    width: 104px;
+	}
+}
+
+@media (max-width: 654px) {
+	body {
+	    height: 812px;
+	}
+	.content {
+	    padding-left: 57px;
+	    padding-bottom: 120px;
+	}
+	.switch {
+		display: none;
+	}
+	.btn-twist {
+		display: block;
+	}
+	footer {
+		overflow: hidden;
+	    height: 190px;
+	    margin: -190px 0 0;
+	}
+	.text.active {
+		display: none;
+	}
+	.big-win {
+	    left: -46px;
+	    width: 520px;
+	    top: -121px;
+	}
+}
+
+@media (max-width: 550px) {
+	.content {
+		padding-left: 0px;
+	}
+	.drum {
+		width: 435px;
+	}
+	.big-win {
+	    left: 0px;
+	    right: 0px;
+	    margin: auto;
+	    width: 409px;
+	    top: -99px;
+	}
+
+}
+
+@media (max-width: 440px) {
+	body {
+	    background: #000000 url(../img/bg-mob.jpg) no-repeat;
+	    background-size: 100% 100%;
+	    background-position: top center;
+	}
+	body:before {
+		content: '';
+		display: block;
+		width: auto;
+		max-width: 488px;
+		height: 484px;
+		position: absolute;
+		background: url(../img/mob-girl.png) no-repeat;
+		background-size: cover;	
+		left: -40px;
+	    right: 0;
+	    top: 90px;
+		margin: auto;
+		z-index: -2;
+	}
+	.logo {
+		display: block;
+	}
+	.drum {
+		background: url(../img/mob-drum.png) no-repeat;
+    	background-size: cover;
+    	margin-left: -13px;
+    	width: 391px;
+	}
+	.drum__window {
+	    width: 284px;
+	    height: 175px;
+	    top: 14px;
+	    left: 57px;
+	}
+	.drum__spins {
+		display: none;
+	}
+	.content {
+		padding-bottom: 145px;
+	}
+	footer {
+	    overflow: hidden;
+	    height: 210px;
+	    margin: -212px 0 0;
+	}
+	.drum__window ul {
+		width: 79px;
+	}
+	.drum__window ul li {
+		width: 79px;
+	}
+	.one {
+	    top: 63%;
+	}
+	.two {
+	    top: -34%;
+	}
+	.three {
+	    top: -130%;
+	}
+	.popup {
+		left: 39px;
+	}
+	.total-win__btn {
+	    top: 90px;
+	}
+	.big-win {
+	    left: 12px;
+	    right: 0px;
+	    margin: auto;
+	    width: 339px;
+	    top: -147px;
+	}
+}
