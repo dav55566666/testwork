@@ -110,7 +110,7 @@
 
           $(new Image()).attr('src', src).on( 'load', function() {
 
-            lz.append( '<img src="' + src + '">' );
+            lz.append( '<img loading="lazy" src="' + src + '">' );
 
             $this.showTitle( title );
             $this.setTitleColor( title );

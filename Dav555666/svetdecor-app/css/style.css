@@ -164,6 +164,28 @@ template {
 ::-webkit-scrollbar-thumb {
   background: #04b8ad
 }
+.header__slider ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+.header__slider ul .slick-track {
+  padding: 0!important
+}
+.header__slider ul li {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content
+}
+.header__slider ul li span {
+  white-space: nowrap
+}
 .header__bottom {
   position: relative;
   z-index: 4
